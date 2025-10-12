@@ -6,32 +6,31 @@
             body 
             {
                 background-color: #528aae;
+                color:#f9f9f9;
             }
             table
             {
                 background-color: white;
                 margin: auto;
                 width: 72%;
-            }
-            .sorok:nth-child(odd) 
-            {
-            background-color: #D6EEEE;
-            }
-            .sorok:hover {
-                background-color:lightblue;
-                border-radius: 10px;
+                color:black;
             }
             h2, p 
             {
                 margin: 10px;
             }
-
+            .navbar
+            {
+                position: fixed;
+                width: 99%;
+            } 
             ul {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
                 background-color: white;
+                color:black;
             }
 
             ul li {
@@ -48,6 +47,7 @@
 
             ul li a:hover {
                 background-color: lightblue;
+                color:black;
             }
             li.dropdown {
                 display: inline-block;
@@ -56,6 +56,7 @@
                 display: none;
                 position: absolute;
                 background-color: #f9f9f9;
+                color: black;
                 min-width: 160px;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 1;
@@ -69,10 +70,12 @@
                 border: 3px solid white;
                 padding: 10px;
                 background-color: white;
+                color: black;
             }
             </style>
         </head>
         <body>
+            <div class="navbar">
             <ul>
                 <li><a href="cimlap.html">Címlap</a></li>
                 <li><a href="munka.html">Munkanapló</a></li>
@@ -86,10 +89,10 @@
                         <a href="h5.html">H5</a>
                     </div>
                 </li>
-
             </ul>
+            </div>
             
-            <br>
+            <br><br>
             <p style="margin-bottom: 0cm;" align="left" lang="hu-HU"><font style="font-size: 22pt;" size="6">Csoport
     neve: Kódkukacok</font></p>
             <p style="margin-bottom: 0cm;" align="left" lang="hu-HU"><font style="font-size: 22pt;" size="6">Feladat sorszáma: 01</font></p>
@@ -110,8 +113,7 @@
     <p style="margin-bottom: 0cm;" align="center" lang="hu-HU"><font style="font-size: 22pt;" size="6">Árvai László</font></p>
     <p style="margin-bottom: 0cm;" align="center"><br></p>
 
-    <p style="margin-bottom: 0cm;" align="left" lang="hu-HU"><font style="font-size: 16pt;" size="4">Csoport
-    tagok:</font></p>
+    
     <p style="margin-bottom: 0cm;" align="left"><br>
 
     </p>
@@ -121,28 +123,9 @@
         <col width="75">
         <col width="264">
         <tbody>
-            <tr valign="top">
-
-                <td width="118">
-                    
-            <p align="left" lang="hu-HU"><font size="3">VEZETŐ NEVE</font></p>
-
-                </td>
-
-                <td width="75">
-                    
-            <p align="left" lang="hu-HU"><font size="3">TANKÖR</font></p>
-
-                </td>
-
-                <td width="264">
-                    
-            <p align="left" lang="hu-HU"><font size="3">EMAIL CÍM</font></p>
-
-                </td>
-
-            </tr>
-
+            <tr>
+                     <th colspan="3" font style="font-size:x-large;">Csoport tagok:</th>
+                </tr>
             <tr valign="top">
 
                 <td width="118">
@@ -255,6 +238,81 @@
 
         </tbody>
     </table>
+    <p></p>
+     <table border="1" cellpadding="4" cellspacing="3" width="90%">
+        <col width="118">
+        <col width="75">
+        <col width="264">
+        <tbody>
+            <tr valign="top">
+                <th colspan="3" font style="font-size:x-large;">Munkafolyamat</th>
+                </tr>
+                <td width="118">
+                    
+            <p align="left" lang="hu-HU"><font style ="font-weight: bold; ">Dátum</font></p>
+
+                </td>
+
+                <td width="75">
+                    
+            <p align="left" lang="hu-HU"><font style ="font-weight: bold; ">Verzió</font></p>
+
+                </td>
+
+                <td width="264">
+                    
+            <p align="left" lang="hu-HU"><font style ="font-weight: bold; ">Leírás</font></p>
+
+                </td>
+
+            </tr>
+            
+            <tr valign="top">
+
+                <td width="118">
+                    
+            <p align="left" lang="hu-HU"><font size="3">2025.09.28.</font></p>
+
+                </td>
+
+                <td width="75">
+                    
+            <p align="left" lang="hu-HU"><font size="3">1.0</font></p>
+
+                </td>
+
+                <td width="264">
+                    
+            <p align="left" lang="hu-HU"><font size="3">-</font></p>
+
+                </td>
+
+            </tr>
+
+            <tr valign="top">
+
+                <td width="118">
+                    
+            <p align="left" lang="hu-HU"><font size="3">2025.10.12.</font></p>
+
+                </td>
+
+                <td width="75">
+                    
+            <p align="left" lang="hu-HU"><font size="3">1.1</font></p>
+
+                </td>
+
+                <td width="264">
+                    
+            <p align="left" lang="hu-HU"><font size="3">Leírás bővítése verzióval, részletesebb kifejtés</font></p>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
     <br>
             <div class="szoveg_doboz">
 
@@ -273,23 +331,101 @@
 
                             Backend fejlesztő(Breitenbach Attila): felhasználói szerepkörök, számlázás <br>
                             </p>
-                            <p>A struktúránkat egy személyes megbeszélés alatt hoztuk létre, mely beszélgetés alatt figyelembe vettük hogy milyen szerepekre lehet szükségünk, hogy senki ne legyen túlságosan leterhelve és kihasználjuk az erősségeinket a feladatmegvalósításban is, mert ez jelentős időt nyerhet számunkra a projektlétrehozásban. </p>
+                            <p>A struktúránkat egy személyes megbeszélés alatt hoztuk létre, mely beszélgetés alatt figyelembe vettük, hogy milyen szerepekre lehet szükségünk, hogy senki ne legyen túlságosan leterhelve és kihasználjuk az erősségeinket a feladat megvalósításban is, mert ez jelentős időt nyerhet számunkra a projekt létrehozásban. </p>
 
                             <h2>Feladat részletes meghatározása </h2>
 
-                            <p>Az éttermi appunkba szeretnénk, kuponokat például havonta változó kínálattal, menűket, különböző kedvezményeket külön felülettel a vendégek és a dolgozók számára. A vendégeknek egy szépen designolt könnyen átlátható alkalmazást nyújtanánk ezzel, ami egy előrelépést tenne a mostani éttermi alkalmazásokhoz képest, amik már modernek, de látunk potenciált a fejlesztésére és kényelmesebb éttermi élményhez a vásárlók számára. A dolgozóknak ez az alkalmazás egy asztali gépre tervezett változat lesz amin a beérkező rendeléseket tudják nyomon követni érkezési sorrendben ahol előregondolva a betanításra tekintettel a képernyőn az adott menűre kattintva, van kézzel érintve megnyitható egy ábrázolt elkészítése a menűnek, de ez opcionálisan megnyitható nem kötelező. A havonta változó kinálatot a rendszer automatikusan választaná ki amire egy 10%-os kupon kerül és a főoldalra kerülne fent elhelyezkedve. A menűket nem túlgondolva egyszerűen tervezzük meg, azon belül a módosítás nagyon fontos funkció lenne, hogy a különböző érzékenységekkel élő emberek számára is megfelelő legyen a menü, vagy akár csak az italon tudjanak módosítani a menűben, köretet tudjanak cserélni. Tervben van valami pontgyűjtésszerű funkció, hogy jutalmazzuk a visszatérő vásárlókat. </p>
+                            <p>Az éttermi appunkba szeretnénk kuponokat, például havonta változó kínálattal, menüket, 
+                                különböző kedvezményeket, külön felülettel a vendégek és a dolgozók számára. A vendégeknek egy szépen 
+                                designolt, könnyen átlátható alkalmazást nyújtanánk ezzel, ami egy előrelépést tenne a mostani éttermi 
+                                alkalmazásokhoz képest, amik már modernek, de látunk potenciált a fejlesztésére és kényelmesebb éttermi 
+                                élményhez a vásárlók számára. A dolgozóknak ez az alkalmazás egy asztali gépre tervezett változat lesz, amin 
+                                a beérkező rendeléseket tudják nyomon követni érkezési sorrendben, ahol előre gondolva a betanításra, tekintettel 
+                                a képernyőn az adott menűre kattintva, van kézzel érintve megnyitható egy ábrázolt elkészítése a menünek, 
+                                de ez opcionálisan megnyitható, nem kötelező. A havonta változó kinálatot a rendszer automatikusan választaná 
+                                ki, amire egy 10%-os kupon kerül és a főoldalra kerülne fent elhelyezkedve. A menüket nem túlgondolva, egyszerűen 
+                                tervezzük meg, azon belül a módosítás nagyon fontos funkció lenne, hogy a különböző érzékenységekkel élő emberek 
+                                számára is megfelelő legyen a menü, vagy akár csak az italon tudjanak módosítani a menüben, köretet tudjanak 
+                                cserélni. Tervben van valami pontgyűjtésszerű funkció, hogy jutalmazzuk a visszatérő vásárlókat. </p>
 
                             <h2>Programhasználat </h2>
 
-                            <p>A projektünket Java programozási nyelvben szeretnénk megvalósítani, mert a csoport tagjai közül ezt majdnem mindenki tanulta az egyetem így a csoport tagjai közül mindenki átlátja, és ha valamit még jónak lát az adott kódrészlethez vagy egy hatékonyabb alternatívát talál hozzá akkor kiegészítheti azt. </p>
+                            <p>A projektünket Java programozási nyelvben szeretnénk megvalósítani, mert a csoport tagjai közül ezt 
+                                majdnem mindenki tanulta, így a csoport tagjai közül mindenki átlátja, és ha valamit még 
+                                jónak lát az adott kódrészlethez vagy egy hatékonyabb alternatívát talál hozzá, akkor kiegészítheti azt. Ezen felül 
+                                a frontend megvalósításához React(JavaScript), HTML + Bootstrap nyelveket terveztünk. A programhoz szükséges keretrendszert 
+                            Angularnyelven fogjuk készíteni. A kódok megírásához a VS Code alkalmazást használnánk, valamint a gördülékeny 
+                        munkafolyamathoz a GitHub weboldalt gondoltuk a legpraktikusabbnak.</p>
 
-                            <h2>Mérföldkövek </h2>
-                            <ol>
-                            <li>Funkciók, miket szeretnénk látni a programunkban - átbeszélve </li>
-                            <li>Design kitalálása – elkezdve </li>
-                            <li>Elsőkörű tesztelés –  </li>
-                            <li></li>
-                            </ol>
+            <p><h2>Mérföldkövek</h2></p>
+            <p>A projekt fejlesztése öt fő szakaszra (H1–H5) tagolódik, amelyek egymásra épülő fejlesztési lépéseket és ellenőrizhető 
+                eredményeket tartalmaznak.</p>
+
+<p><h4>H1 – Projektötlet, specifikáció, osztálydiagram</h4></p>
+<p>A fejlesztés első szakaszában kerül sor a rendszer céljának, funkcionális és nem funkcionális követelményeinek meghatározására. 
+    Elkészül a részletes szoftverspecifikáció, valamint az elsődleges osztálydiagram, amely bemutatja az objektumorientált struktúrát
+     (pl. rendelés, étel, asztal, felhasználó osztályok és kapcsolataik).</p>
+
+<p><h4>H2 – Adatbázis séma, alap CRUD műveletek</h4></p>
+<p>A második mérföldkő célja az adatbázis-struktúra kialakítása és a legfontosabb alapműveletek (Create, Read, Update, Delete) megvalósítása. 
+    Ezek az alapfunkciók teszik lehetővé az ételek, asztalok és rendelések rögzítését, lekérdezését és módosítását.</p>
+
+<p><h4>H3 – Rendelésfelvétel és státuszkezelés (pincér, konyha)</h4></p>
+<p>Ebben a fázisban megvalósításra kerül a rendelésfelvétel folyamata, valamint a státuszváltások (pl. új rendelés → folyamatban → elkészült). 
+    A rendszer lehetőséget biztosít a pincérek és a konyhai dolgozók közötti kommunikációra, illetve a rendelési státusz valós idejű frissítésére.</p>
+
+<p><h4>H4 – Számlázás, admin étlapkezelés, tesztelés</h4></p>
+<p>A negyedik szakaszban a projekt eléri a teljes funkcionalitás szintjét. Megvalósul a számlázási modul, az adminisztrációs felület 
+    (étlap és árak kezelése), valamint megkezdődik a rendszer tesztelése. Az egység- és integrációs tesztek célja a hibák korai feltárása és 
+    a megbízhatóság biztosítása.</p>
+
+<p><h4>H5 – Teljes demó, dokumentáció, prezentáció</h4></p>
+<p>A záró fázisban elkészül a végleges verzió a teljes dokumentációval együtt. A csapat bemutatja a projekt működését egy 5 perces élő demó 
+    során, valamint elkészíti a záró dokumentációkat és a prezentációt.</p>
+            
+            <h1></h1>
+            <h2>Leendő produktomok</h2>
+            <table>
+                
+                <tr style="text-align: left;">
+                    <th>Dokumentumok</th>
+                    <th>Létrejötének ideje</th>
+                </tr>
+                <tr style="text-align: left;"><td>Szoftverspecifikáció</td><td>H1 végére</td></tr>
+                <tr style="text-align: left;"><td>UML diagramok</td><td>H2</td></tr>
+                <tr style="text-align: left;"><td>Adatbázis-séma</td><td>H2</td></tr>
+                <tr style="text-align: left;"><td>Api dokumentáció</td><td>H3+H4</td></tr>
+                <tr style="text-align: left;"><td>Felhasználói kéziköny</td><td>H5</td></tr>
+                <tr style="text-align: left;"><td>Prezentáció</td><td>H5</td></tr>
+            </table>
+            <h1></h1>
+            <p><h2>Tesztelési Követelmények</h2></p>
+               <p><b>Egységtesztek:</b> a rendelés létrehozásának, státuszváltásának és számlázásának helyes működését ellenőrzik.</p>
+                <p><b>Integrációs tesztek:</b> az API végpontok és az adatbázis közötti kommunikáció validálására szolgálnak.</p>
+                <p><b>UI tesztek:</b> a felhasználói felület működését vizsgálják (pl. rendelés leadása, státusz megjelenítése).</p>
+                <p><b>Manuális tesztek:</b>a pincér és a vendég által végzett próbafelhasználás során történik, valós forgatókönyvek alapján.</p>
+                <p><b>Automatikus tesztek:</b>ytest és Selenium eszközökkel a fő funkciók ismételt ellenőrzésére</p>
+                <p><b>Sebességre vonatkozó tesztek:</b> a rendszer terhelhetőségét és a maximális egyidejű rendelési folyamatok számát mérik.</p>
+
+            <h1></h1>
+
+            <p><h2>Bemutatás</h2></p>
+            <p>A projekt bemutatása az H5 időpontban történik, egy 5 perces prezentáció és élő demó keretében.</p>
+            <p></p><p>A demó során a következő folyamat kerül szemléltetésre:</p>
+
+            <p>Rendelés felvétele -> Konyhai státuszváltozás -> Számla generálás.</p>
+
+            <p>A végleges produktum a GitHub repozitóriumban lesz elérhető, mely tartalmazza a 
+                teljes forráskódot, az adatbázist és a dokumentációt (PDF formátumban).</p>
+            <p></p>
+            <p><h2>Információ források</h2></p>
+            <h1></h1>
+            <table>
+                <tr><td><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></td></tr>
+                <tr><td><a href="https://github.com/">https://github.com/</a></td></tr>
+                <tr><td><a href="https://getbootstrap.com/">https://getbootstrap.com/</a></td></tr>
+                <tr><td><a href="https://www.mysql.com/">https://www.mysql.com/</a></td></tr>
+            </table>
  
 
  
