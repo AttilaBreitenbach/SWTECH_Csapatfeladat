@@ -285,7 +285,7 @@
                 <p style="margin: 0;"><a href="#1">1. Bevezetés</a></p><br>
                 <p style="margin: 0;"><a href="#2">2. Áttekintés</a></p><br>
                 <p style="margin: 0;"><a href="#3">3. A rendszer funkciói</a></p><br>
-                <p style="margin: 0; margin-left: 10;"><a href="#31">3.1 Első követelmény</a></p><br>
+                <!-- <p style="margin: 0; margin-left: 10;"><a href="#31">3.1 Első követelmény</a></p><br> -->
                 <p style="margin: 0;"><a href="#4">4. Használhatóság</a></p><br>
                 <!-- <p style="margin: 0;"><a href="#5">5. Megbízhatóság</a></p><br> -->
                 <p style="margin: 0;"><a href="#6">6. Teljesítmény</a></p><br>
@@ -740,13 +740,122 @@
                             <ol>Memória: 3 GB RAM </ol>
                             <ol>Stabil Wi-Fi vagy mobilinternet kapcsolat (legalább 10 Mbps) </ol>
                         </p>
+                <h2 id="7">7. Támogatottság (Supportability)</h2>
+                        <p>A Papillon éttermi rendeléskezelő rendszer támogatottsági követelményei arra szolgálnak, hogy a szoftver hosszú távon is könnyen karbantartható, fejleszthető és megbízhatóan üzemeltethető legyen. A cél, hogy az éttermi személyzet, a rendszergazdák és a fejlesztők is hatékonyan tudják kezelni a rendszert anélkül, hogy a működés biztonsága vagy stabilitása csorbulna.</p>
+                        <p>A rendszer üzemeltetése során kiemelt szempont, hogy az esetleges hibák gyorsan azonosíthatók és javíthatók legyenek, az új verziók telepítése ne okozzon fennakadást, valamint a napi működést támogató funkciókhoz a karbantartók és üzemeltetők is hozzáférjenek. </p>
+                        <p><b>7.1 Fejlesztési elvek és kódolási szabványok </b></p>
+                            <p>A karbantarthatóság alapja a jól szervezett és egységes fejlesztési környezet. A Papillon rendszer fejlesztése során egységes kódolási szabványokat alkalmaztunk mind a frontenden, mind a backenden.  </p>
+                            <p>A frontend fejlesztése Angular keretrendszerben történt, komponensalapú szerkezetben, amely lehetővé teszi az egyes funkciók külön-külön történő frissítését és újrafelhasználását. A backend a REST API elveit követi, így a kliens és a szerver oldali fejlesztések egymástól függetlenül is végezhetők.</p>
+                            <p>Az elnevezésekre konzisztens konvenciók vonatkoznak (camelCase változók, PascalCase osztályok, kebab-case fájlnevek), ami megkönnyíti a kód olvashatóságát és egységes megjelenését. A fejlesztők a Git verziókezelő rendszert használják, amelyben minden változtatás naplózásra kerül.  </p>
+                            <p>Ez nemcsak a közös munka összehangolását, hanem a hibák visszakövetését és korábbi verziók visszaállítását is lehetővé teszi.</p>
+                            <p>A projekt során követett fejlesztési filozófia a clean code és a moduláris architektúra elveire épül. A kód minden fontosabb részéhez részletes megjegyzések (kommentek) készülnek, valamint automatikus dokumentáció generálódik (Swagger, JSDoc), hogy az újonnan belépő fejlesztők gyorsan megértsék a rendszer működését.</p>
+                        <p><b>7.2 Naplózás és hibakezelés </b></p>
+                            <p>A rendszer működése során folyamatosan naplózza a legfontosabb eseményeket. A naplózás több szinten történik:</p>
+                                <ol>
+                                    <li>Alkalmazásszintű logolás: minden rendelés leadása, státuszváltás, fizetés, hiba vagy rendszerüzenet naplózásra kerül. </li>
+                                    <li> Rendszerszintű logolás: a szerver teljesítménye, a memóriaterhelés, a válaszidők és a hibás lekérések külön kerülnek figyelésre. </li>
+                                </ol>
+                            <p>A logfájlok segítenek a hibák gyors azonosításában. Például, ha egy rendelés feldolgozása nem történik meg, a karbantartó a logfájlban könnyen visszakövetheti, hogy a hiba a kliensoldalon (pl. hibás adatbevitel) vagy a szerveroldalon (pl. adatbázis elérés) történt.  </p>
+                            <p>A logok elemzését egy külön segédprogram támogatja, amely szűrési és keresési lehetőségeket is kínál (dátum, hibakód, felhasználói azonosító stb.). Ezzel jelentősen gyorsul a hibakeresés és csökken az állásidő.</p>
+                        <p><b>7.3 Karbantartói és adminisztrátori funkciók </b></p>
+                            <p>Az üzemeltetők és karbantartók munkáját külön adminisztrációs modul segíti. Ez a felület nem elérhető a normál felhasználók számára, kizárólag rendszergazdai jogosultsággal.<br> A főbb funkciók:</p>
+                            <ol>
+                                <li>adatbázis mentése és visszaállítása, </li>
+                                <li>felhasználói jogosultságok módosítása,</li>
+                                <li>rendszerlogok megtekintése és exportálása,</li>
+                                <li>verziófrissítések telepítése,</li>
+                                <li>szolgáltatások újraindítása és állapotfigyelés.</li>
+                            </ol>
+                            <p>Ezek a funkciók lehetővé teszik, hogy a karbantartók a legtöbb beavatkozást önállóan, külső fejlesztői segítség nélkül elvégezzék. Emellett az adminisztrációs felület valós idejű rendszerstatisztikákat is mutat, ami segíti az üzemeltetés optimalizálását.</p>
+                        <p><b>7.4 Dokumentáció és tudásmegosztás </b></p>
+                            <p>A támogatottság egyik kulcseleme a részletes dokumentáció. A Papillon rendszerhez két fő dokumentációs csomag készült:</p>
+                                <ol>
+                                    <li>1. Felhasználói útmutató, amely az éttermi dolgozók számára mutatja be a kezelőfelületet, a rendelésfelvétel lépéseit és az adminisztráció alapjait.   </li>
+                                    <li>2. Fejlesztői kézikönyv, amely a technikai részleteket tartalmazza: adatbázis-séma, API végpontok, függőségek, frissítési eljárások, hibakódok és telepítési folyamatok. </li>
+                                </ol>
+                            <p>A dokumentáció online formában (wiki rendszerben) is elérhető, így a módosítások és frissítések azonnal nyomon követhetők.</p>
+                        <p><b>7.5 Biztonsági mentés és frissítések kezelése </b></p>
+                                <p>A Papillon rendszer adatainak védelme érdekében napi szintű automatikus biztonsági mentések készülnek az adatbázisról és a naplófájlokról. </p>
+                                <p>Ezek a mentések titkosított formában kerülnek tárolásra, és szükség esetén könnyen visszaállíthatók. </p>
+                                <p>A rendszer támogatja az inkrementális frissítéseket, vagyis csak az új vagy módosított komponenseket kell telepíteni, ami csökkenti az üzemzavar kockázatát.</p>
+                        <p><b>7.6 Továbbfejleszthetőség és bővíthetőség </b></p>
+                                <p>A rendszer architektúrája moduláris, így új funkciók később is hozzáadhatók anélkül, hogy az alapfunkciók működését befolyásolnák. </p>
+                                <p>A REST API használata lehetővé teszi más rendszerekkel való integrációt, például online fizetési szolgáltatókkal vagy készletkezelő rendszerekkel. Ez biztosítja, hogy a Papillon hosszú távon is rugalmasan fejleszthető és modern maradjon.</p>
+                        <p><b>7.7 Üzemeltetői támogatás és technikai háttér </b></p>
+                                <p>Az üzemeltetők számára elérhető a távoli támogatás funkció, amely lehetővé teszi, hogy a fejlesztői csapat szükség esetén biztonságos csatornán keresztül beavatkozzon a rendszer működésébe. </p>
+                                <p>A rendszer rendelkezik automatikus hibajelentő mechanizmussal, amely kritikus hibák esetén e-mail értesítést küld a karbantartóknak és a fejlesztői csapatnak.  </p>
+                                <p>A Papillon stabil működését folyamatosan monitorozó eszközök is segítik, amelyek az esetleges leállásokat vagy teljesítményromlást azonnal jelzik.</p>
+                        <p><b>7.8 Összegzés </b></p>
+                                <p>A támogatottsági követelmények teljesítésével biztosítható, hogy a Papillon éttermi rendeléskezelő rendszer hosszú távon is fenntartható, biztonságos és jól karbantartható legyen.  </p>
+                                <p>A fejlesztési szabványok, a naplózási és karbantartási funkciók, a részletes dokumentáció és a távoli támogatás együttesen garantálják, hogy a rendszer megbízhatóan szolgálja az étterem működését, miközben lehetőséget nyújt a jövőbeli fejlesztésekre és technológiai bővítésekre is.</p>
                 <h2 id="10">10. Felhasznált kész komponensek</h2>
+                    <p><ins><b>OneSignal Push Notification Service</b></ins></p>
+                        <dl style="list-style-type: disc; margin-left: 30;">
+                            <li><b>Funkció:</b>Push értesítések küldése Android és iOS eszközökre </li>
+                            <li><b>Szolgáltató:</b>OneSignal, Inc. </li>
+                            <li><b>Licenc típusa:</b>ingyenes alapszolgáltatás, fizetős bővített funkciók</li>
+                            <li><b>Beszerzés módja:</b> Online regisztráció a https://onesignal.com oldalon</li>
+                            <li><b>Költségek: </b></li>
+                                <ol style="list-style-type: square;">
+                                    <li>Ingyenes csomag: napi 6,000 értesítés</li>
+                                    <li>Fizetős csomag: kb. 3000 Ft / hó / app</li>
+                                </ol>
+                            <li><b>Felhasználási feltételek:</b> OneSignal Terms of Service és Privacy Policy betartása kötelező </li>
+                        </dl>
+                    <p><ins><b> Retrofit (Android)</b></ins></p>
+                        <dl style="list-style-type: disc; margin-left: 30;">
+                            <li><b>Funkció:</b>REST API kommunikáció kezelése</li>
+                            <li><b>Szolgáltató:</b> Square, Inc. </li>
+                            <li><b>Licenc típusa:</b>Apache License 2.0 </li>
+                            <li><b>Beszerzés módja:</b>https://github.com/square/retrofit</li>
+                            <li><b>Költségek: </b></li>
+                                <ol style="list-style-type: square;">
+                                        <li>Szabadon használható és módosítható</li>
+                                        <li>Licencmegjelölést (copyright notice) meg kell tartani </li>
+                                    </ol>
+                            <li><b>Következmények / kötelezettségek:</b></li>
+                                <ol style="list-style-type: square;">
+                                    <li>A projekt dokumentációjában fel kell tüntetni az Apache 2.0 licencet </li>
+                                </ol>
+                        </dl>
+                    <p><ins><b>Firebase SDK</b></ins></p>
+                        <dl style="list-style-type: disc; margin-left: 30;">
+                            <li><b>Funkció:</b>Felhasználóhitelesítés, adatbázis, analitika </li>
+                            <li><b>Szolgáltató:</b>Google LLC </li>
+                            <li><b>Licenc típusa:</b>Apache License 2.0 </li>
+                            <li><b>Beszerzés módja:</b>https://firebase.google.com</li>
+                            <li><b>Felhasználási feltételek:</b></li>
+                            <ol style="list-style-type: square;">
+                                    <li>Google Cloud Terms of Service</li>
+                                    <li>Adatkezelés: GDPR és adatvédelmi szabályzat alkalmazása kötelező</li>
+                                </ol>
+                            <li><b>Következmények / kötelezettségek:</b></li>
+                                <ol style="list-style-type: square;">
+                                    <li>A szolgáltatás adatokat küld a Google szervereire</li>
+                                </ol>
+                        </dl>
+                    <p><ins><b>Glide</b></ins></p>
+                        <dl style="list-style-type: disc; margin-left: 30;">
+                            <li><b>Funkció:</b> Képek betöltése és gyorsítótárazása Android alkalmazásban </li>
+                            <li><b>Licenc típusa:</b> BSD, part of Google Open Source</li>
+                            <li><b>Beszerzés módja:</b>https://github.com/bumptech/glide</li>
+                            <li><b>Következmények / kötelezettségek:</b></li>
+                                <ol style="list-style-type: square;">
+                                    <li>Szabadon használható kereskedelmi célra is</li>
+                                    <li>A szerző megjelölése ajánlott</li>
+                                </ol>
+                        </dl>
+                <h2 id="11">11. Interfészek</h2>
                 <h2 id="111">11.1 Felhasználói interfészek (User Interfaces)</h2>
                     <p>A Papillon rendszer felhasználói interfésze több, egymáshoz kapcsolódó, de funkcionálisan eltérő felületből áll, amelyek egységes arculatot és kezelési logikát követnek. A cél egy olyan vizuálisan harmonikus, könnyen navigálható és gyors felület létrehozása volt, amely minden felhasználói csoport számára kényelmesen használható. </p>
                     <p>Az asztali rendelőfelület az étterem vendégei számára készült, és egy érintőképernyős táblagépen jelenik meg az asztalon. A főképernyőn az étlap kategóriák szerint jelenik meg, jól elkülönített színes ikonokkal. Az étel kiválasztása után a vendég egy külön oldalon láthatja a tétel részleteit, allergén információkat és árakat, majd a „Rendelés megerősítése” gombbal véglegesítheti választását. A rendelés leadása előtt egy megerősítő ablak jelenik meg, amely ellenőrzésre hívja fel a figyelmet. </p>
                     <p>A mobilalkalmazás a modern okostelefonok felhasználói szokásaihoz igazodik. Letisztult, egykezes kezelésre optimalizált kialakítású, és gyors keresőfunkcióval segíti az ételek, kategóriák és akciók megtalálását. A hűségpontok és korábbi rendelések külön fülön érhetők el, így a gyakori vásárlók néhány másodperc alatt leadhatják rendelésüket. A mobilapp arculata a Papillon étterem stílusát tükrözi, pasztellszínekkel, ikonikus pillangólogóval és egyszerű tipográfiával. </p>
                     <p>A pincér- és adminisztrátori felületek funkcionálisabb, kevesebb díszítőelemet tartalmazó elrendezéssel rendelkeznek, hogy a munkavégzés gyors és hatékony legyen. A rendeléseket és asztalokat listanézetben jelenítik meg, jól látható státuszjelző színekkel (új – zöld, készül – sárga, felszolgálva – kék, fizetve – szürke). Az admin modul külön menüpontokban teszi elérhetővé az étlap- és dolgozókezelést, az árak módosítását, valamint a statisztikák megtekintését. </p>
                     <p>A Papillon minden felülete reszponzív, vagyis automatikusan alkalmazkodik az eszköz képernyőméretéhez. Az egységes dizájn és navigációs struktúra biztosítja, hogy a felhasználók a különböző eszközök között váltva is gyorsan eligazodjanak. A tipográfia és a kontrasztarány megfelel a hozzáférhetőségi irányelveknek (WCAG 2.1 AA), így a rendszer vizuálisan is inkluzív, könnyen olvasható és használható. </p>
+                <h2 id="112">11.2 Hardware interfészek</h2>
+                    <p>A Papillon többféle <b>hardver interfészt</b> is használ: például a <b>GPS-t</b> a felhasználó helyének meghatározásához és a közeli éttermek megjelenítéséhez, a <b>kamerát</b> vagy <b>QR-kód olvasót</b> az asztali rendelések vagy kuponok beolvasásához, a <b>mikrofont</b> hangalapú kereséshez, a <b>érintőképernyőt</b> a menüben való navigáláshoz, a <b>hálózati interfészeket (Wi-Fi, mobilinternet)</b> az online rendelés és fizetés lebonyolításához, valamint esetenként a <b>NFC-t</b> az érintéses fizetéshez. Az alkalmazás a <b>tárhelyet</b> is használja a rendelési adatok vagy bejelentkezési információk ideiglenes mentésére.</p>
+                <h2 id="113">11.3 Software interfészek</h2>
+                    <p>A Papillon számos <b>szoftver interfészt</b> használ a működése során: az <b>operációs rendszer API-jain</b> keresztül éri el a készülék funkcióit, például az értesítéseket vagy a helymeghatározást; <b>webes és backend API-kon</b> keresztül kommunikál a kiszolgálóval, hogy lekérje az éttermek listáját, a menüt, illetve elküldje a rendeléseket; <b>adatbázis interfészeket</b> használ a felhasználói adatok és korábbi rendelések helyi tárolására; a <b>felhasználói felület (UI) interfészei</b> biztosítják az alkalmazás megjelenését és az interakciókat; emellett <b>külső szolgáltatások interfészeihez</b> is kapcsolódik, például térképekhez, online fizetési rendszerekhez vagy bejelentkezési szolgáltatásokhoz, és gyakran <b>külső szoftverkönyvtárakat (SDK-kat)</b> is integrál analitika, értesítéskezelés vagy hibakövetés céljából.</p>
                 <h2 id="12">12. Alkalmazott szabványok </h2>
                     <p>A rendszer fejlesztése és működése során többféle szabványt és előírást is figyelembe kell venni, hogy az alkalmazás biztonságos, megbízható és hosszú távon is fenntartható legyen. Mivel a projekt érinti az online fizetést, a felhasználói adatok kezelését és az éttermi folyamatokat is, ezért a technikai és jogi megfelelőség különösen fontos. </p>
                     <p><b>Technikai szabványok </b></p>
