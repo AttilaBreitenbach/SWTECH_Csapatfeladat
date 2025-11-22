@@ -322,65 +322,46 @@
                         A rendeléskezelés folyamata minden esetben valós idejű: az asztali és mobilos rendelés azonnal továbbítódik a pincér és a konyhai rendszer felé, így nincs szükség papíralapú közvetítésre, és minimalizálható az emberi hiba lehetősége. 
                     </p> 
                 <h2 id="3">3. A rendszer funkciói</h2>
-                    <p>Éttermi Rendelő Rendszer Funkciói – Felhasználói szemmel<br>
+                    <h3>Éttermi Rendelő Rendszer Funkciói – Felhasználói szemmel</h3>
 
-                            Éttermi Rendelő Rendszer Funkciói<br>
+                            <h4>Étlap megtekintése</h4>
 
-                            Éttermi rendelŰ tabletalkalmazás<br>
-
-                            3. A rendszer funkciói (Specific Requirements)<br>
-
-                            3.1 Áttekintés ........................................... 1<br>
-
-                            3.2 Felhasználói modul .................................. 1<br>
-
-                            - Étlap megtekintése<br>
-
-                            💡 Felhasználói magyarázat: A vendég egy egyszerűen kezelhető felületen
+                            Felhasználói magyarázat: A vendég egy egyszerűen kezelhető felületen
                             böngészheti az étlapot. Kategóriák szerint szűrhet, és minden ételhez
                             fényképet, leírást és árat lát. Célja, hogy a rendelés intuitív és gyors
-                            legyen.<br>
+                            legyen.
 
-                            - Rendelés leadása<br>
+                            <h4>Rendelés leadása</h4>
 
-                            💡 Felhasználói magyarázat: A vendég a kosarába gyűjtött ételeket
+                            Felhasználói magyarázat: A vendég a kosarába gyűjtött ételeket
                             ellenőrzi, majd a rendelést egy gombnyomással leadja. A rendszer
                             visszajelzést ad, és ha az étel elfogyott, figyelmeztetést kap. A
-                            rendelés automatikusan megjelenik a konyhai rendszerben.<br>
+                            rendelés automatikusan megjelenik a konyhai rendszerben.
 
-                            - Fizetés kezdeményezése<br>
+                            <h4>Fizetés kezdeményezése</h4>
 
-                            💡 Felhasználói magyarázat: A rendelés után a vendég a táblagépen
+                            Felhasználói magyarázat: A rendelés után a vendég a táblagépen
                             keresztül kérheti a számlát. Választhat készpénzes, kártyás vagy
-                            mobilfizetést, a rendszer pedig visszajelzést ad a sikeres fizetésről.<br>
+                            mobilfizetést, a rendszer pedig visszajelzést ad a sikeres fizetésről.
 
-                            3.3 Adminisztrációs modul ............................... 2<br>
 
-                            - Bejelentkezés az admin felületre<br>
+                            <h4>Bejelentkezés az admin felületre</h4>
 
-                            💡 Felhasználói magyarázat: Az étterem dolgozói külön admin felületen
-                            tudnak belépni, ahol kezelik az étlapot és a rendeléseket.<br>
+                            Felhasználói magyarázat: Az étterem dolgozói külön admin felületen
+                            tudnak belépni, ahol kezelik az étlapot és a rendeléseket.
 
-                            - Étlap kezelése<br>
+                            <h4>Étlap kezelése</h4>
 
-                            💡 Felhasználói magyarázat: Az admin új ételeket vehet fel, módosíthatja
+                            Felhasználói magyarázat: Az admin új ételeket vehet fel, módosíthatja
                             a meglévőket, vagy törölheti a nem aktuálisakat. Képet, leírást, árat és
-                            allergén-információt is megadhat.<br>
+                            allergén-információt is megadhat.
 
-                            3.4 RendeléskezelŰ modul ................................. 3<br>
 
-                            - Rendelések megjelenítése és kezelése<br>
+                            <h4> Rendelések megjelenítése és kezelése</h4>
 
-                            💡 Felhasználói magyarázat: Az admin valós időben látja a vendégek
+                            Felhasználói magyarázat: Az admin valós időben látja a vendégek
                             rendeléseit. Minden rendelés státusza ('készül', 'kiszolgálva')
                             megjelenik, így gyorsabb a kiszolgálás.<br>
-
-                            3.5 Statisztikai modul .................................. 4<br>
-
-                            3.6 Use Case-diagram ................................... 4<br>
-
-                            3.7 Összefoglalás ...................................... 5 3.1<br>
-                            Áttekintés<br>
 
                             Ez a fejezet részletesen definiálja az éttermi rendelŰ tabletalkalmazás
                             funkcionális követelményeit. A
@@ -397,12 +378,12 @@
                             tárolja a rendeléseket és a változtatásokat, majd szinkronizál online
                             kapcsolat esetén.<br>
 
-                            FŰ modulok<br>
+                            Fő modulok<br>
 
                             1. Felhasználói (vendég) modul: étlap böngészése, tételek kosárba
                             helyezése, rendelés leadása, fizetés<br>
 
-                            💡 Felhasználói magyarázat: A vendég a kosarába gyűjtött ételeket
+                            Felhasználói magyarázat: A vendég a kosarába gyűjtött ételeket
                             ellenőrzi, majd a rendelést egy gombnyomással leadja. A rendszer
                             visszajelzést ad, és ha az étel elfogyott, figyelmeztetést kap. A
                             rendelés automatikusan megjelenik a konyhai rendszerben.<br>
@@ -410,7 +391,7 @@
                             kezdeményezése.<br> 2. Adminisztrációs modul: bejelentkezés, étlap kezelése
                             (CRUD), rendelésfigyelés,<br>
 
-                            💡 Felhasználói magyarázat: Az admin új ételeket vehet fel, módosíthatja
+                            Felhasználói magyarázat: Az admin új ételeket vehet fel, módosíthatja
                             a meglévőket, vagy törölheti a nem aktuálisakat. Képet, leírást, árat és
                             allergén-információt is megadhat.
 
@@ -421,13 +402,13 @@
                             képek, árak, készletkezelés egyszerŰ
 
                             formája.<br> 5. Statisztikai modul: napi/heti/havi riportok, legnépszerŰbb
-                            tételek, bevétel-összegzés.<br>
+                            tételek, bevétel-összegzés.
 
-                            3.2 Felhasználói modul<br>
+                            <h4>Felhasználói modul</h4>
 
                             Use Case: Étlap megtekintése<br>
 
-                            💡 Felhasználói magyarázat: A vendég egy egyszerűen kezelhető felületen
+                            Felhasználói magyarázat: A vendég egy egyszerűen kezelhető felületen
                             böngészheti az étlapot. Kategóriák szerint szűrhet, és minden ételhez
                             fényképet, leírást és árat lát. Célja, hogy a rendelés intuitív és gyors
                             legyen.<br>
@@ -441,9 +422,9 @@
                             Postkondíciók: A vendég megtekintette a tételeket, amely lehetŰvé teszi
                             a további lépéseket (kosárba<br>
 
-                            helyezés, részletek megtekintése).<br>
+                            helyezés, részletek megtekintése).
 
-                            Main Flow:<br>
+                            <h4>Main Flow:</h4>
 
                             1. AlapképernyŰ megjelenik, a vendég érintéssel választ kategóriát.<br> 2. A
                             rendszer lekérdezi és megjeleníti
@@ -466,9 +447,9 @@
 
                             elérhetŰ, figyelmeztetés és offline mód.<br>
 
-                            Use Case: Rendelés leadása<br>
+                            <h4>Use Case: Rendelés leadása</h4>
 
-                            💡 Felhasználói magyarázat: A vendég a kosarába gyűjtött ételeket
+                            Felhasználói magyarázat: A vendég a kosarába gyűjtött ételeket
                             ellenőrzi, majd a rendelést egy gombnyomással leadja. A rendszer
                             visszajelzést ad, és ha az étel elfogyott, figyelmeztetést kap. <br>A
                             rendelés automatikusan megjelenik a konyhai rendszerben.<br>
@@ -480,7 +461,7 @@
                             Postkondíciók: Rendelés mentve; megjelenik az admin rendeléslistájában;<br>
                             vendég visszaigazolást kap.
 
-                            Main Flow:<br>
+                            <h4>Main Flow:</h4>
 
                             1. Vendég megnyitja a kosarat és ellenŰrzi a tételeket. <br>2. Megadja az
                             asztalszámot vagy választja az
@@ -503,7 +484,7 @@
 
                             rendszer jelzi a készlethiányt.<br> Use Case: Fizetés kezdeményezése<br>
 
-                            💡 Felhasználói magyarázat: A rendelés után a vendég a táblagépen
+                            Felhasználói magyarázat: A rendelés után a vendég a táblagépen
                             keresztül kérheti a számlát. Választhat készpénzes, kártyás vagy
                             mobilfizetést, a rendszer pedig visszajelzést ad a sikeres fizetésről.<br>
 
@@ -512,7 +493,7 @@
                             Prekondíciók: A rendelés leadva és elfogadva; fizetési opciók
                             konfigurálva az admin által.<br>
 
-                            Main Flow:<br>
+                            <h4>Main Flow:</h4>
 
                             1. Vendég kiválasztja a 'Fizetés' opciót.<br> 2. Rendszer összesíti a
                             számlát (tételek, adó, borravaló opció).<br> 3.
@@ -528,11 +509,11 @@
                             Kivételes eset: Sikertelen tranzakció – visszajelzés, újrapróbálkozás
                             vagy másik fizetési mód felajánlása.<br>
 
-                            3.3 Adminisztrációs modul<br>
+                            <h4> Adminisztrációs modul</h4>
 
                             Use Case: Bejelentkezés az admin felületre<br>
 
-                            💡 Felhasználói magyarázat: Az étterem dolgozói külön admin felületen
+                            Felhasználói magyarázat: Az étterem dolgozói külön admin felületen
                             tudnak belépni, ahol kezelik az étlapot és a rendeléseket.<br>
 
                             Leírás: Admin hitelesítése a jogosultságok ellenŰrzéséhez.<br>
@@ -547,11 +528,11 @@
                             Alternatív flow: Elfelejtett jelszó folyamata – jelszó visszaállítás
                             e-mail/SMS segítségével (ha
 
-                            internetkapcsolat elérhetŰ).<br>
+                            internetkapcsolat elérhetŰ).
 
-                            Use Case: Étlap kezelése<br>
+                            <h4>Use Case: Étlap kezelése</h4>
 
-                            💡 Felhasználói magyarázat: Az admin új ételeket vehet fel, módosíthatja
+                            Felhasználói magyarázat: Az admin új ételeket vehet fel, módosíthatja
                             a meglévőket, vagy törölheti a nem aktuálisakat. Képet, leírást, árat és
                             allergén-információt is megadhat.<br>
 
@@ -571,11 +552,11 @@
 
                             szerverrel online módban.<br>
 
-                            3.4 RendeléskezelŰ modul<br>
+                            <h4> RendeléskezelŰ modul</h4>
 
                             Use Case: Rendelések megjelenítése és kezelése<br>
 
-                            💡 Felhasználói magyarázat: Az admin valós időben látja a vendégek
+                            Felhasználói magyarázat: Az admin valós időben látja a vendégek
                             rendeléseit. Minden rendelés státusza ('készül', 'kiszolgálva')
                             megjelenik, így gyorsabb a kiszolgálás.<br>
 
@@ -598,11 +579,12 @@
                             Kivételes eset: Tömeges megrendelés csúcs – a rendszer sorba állítja a
                             megrendeléseket és jelzi a
 
-                            várható várakozási idŰt. <br>3.5 Statisztikai modul<br>
+                            várható várakozási idŰt. 
+                            <h4>3.5 Statisztikai modul</h4>
 
                             Use Case: Értékesítési statisztikák megtekintése<br>
 
-                            💡 Felhasználói magyarázat: Az admin visszanézheti, mely ételek a
+                            Felhasználói magyarázat: Az admin visszanézheti, mely ételek a
                             legnépszerűbbek, és mennyi bevételt termelt az étterem adott időszakban.<br>
 
                             Leírás: Az admin különbözŰ idŰintervallumokra lekérdezheti az
@@ -621,7 +603,7 @@
                             egy rövid grafikont (bar chart) a forgalomról. <br>4. Admin exportálhat CSV
                             formátumban riportot.<br>
 
-                            3.6 Use Case-diagram +----------------------+ +------------------+ |
+                            <h4> Use Case-diagram</h4> +----------------------+ +------------------+ |
                             Felhasználó |-----------| Étlap megtek. | +----------------------+
                             +------------------+ | | \ | | | \ | | v v v +----------------+
                             +----------------------+ +-----------------+ | Rendelés lead. | |
@@ -631,48 +613,7 @@
                             +-------------------------------+ | Étlap kezelése | Rendelések |
                             +-------------------------------+<br>
 
-                            💡 Felhasználói magyarázat: Az admin új ételeket vehet fel, módosíthatja
-                            a meglévőket, vagy törölheti a nem aktuálisakat. Képet, leírást, árat és
-                            allergén-információt is megadhat.<br>
-
-                            Aktor<br>
-
-                            Leírás<br>
-
-                            Kapcsolódó use case-ek<br>
-
-                            Felhasználó (vendég)<br>
-
-                            Az étteremben ülŰ vendég, aki a tabletet használja rendeléshez.<br>
-
-                            Étlap megtekintése; Rendelés leadása; Fizetés kezdeményezése<br>
-
-                            💡 Felhasználói magyarázat: A vendég egy egyszerűen kezelhető felületen
-                            böngészheti az étlapot. Kategóriák szerint szűrhet, és minden ételhez
-                            fényképet, leírást és árat lát. Célja, hogy a rendelés intuitív és gyors
-                            legyen.<br>
-
-                            💡 Felhasználói magyarázat: A vendég a kosarába gyűjtött ételeket
-                            ellenőrzi, majd a rendelést egy gombnyomással leadja. A rendszer
-                            visszajelzést ad, és ha az étel elfogyott, figyelmeztetést kap. A
-                            rendelés automatikusan megjelenik a konyhai rendszerben.<br>
-
-                            💡 Felhasználói magyarázat: A rendelés után a vendég a táblagépen
-                            keresztül kérheti a számlát. Választhat készpénzes, kártyás vagy
-                            mobilfizetést, a rendszer pedig visszajelzést ad a sikeres fizetésről.<br>
-
-                            Admin (éttermi dolgozó)<br>
-
-                            Az alkalmazást kezelŰ személyzet, aki kezeli az étlapot és a rendelések
-                            státuszát.<br>
-
-                            Bejelentkezés; Étlap kezelése; Rendelések kezelése; Statisztikák<br>
-
-                            💡 Felhasználói magyarázat: Az admin új ételeket vehet fel, módosíthatja
-                            a meglévőket, vagy törölheti a nem aktuálisakat. Képet, leírást, árat és
-                            allergén-információt is megadhat.<br>
-
-                            3.7 Összefoglalás<br>
+                            <h4> Összefoglalás</h4>
 
                             A dokumentum részletesen definiálja a rendszer funkcionális
                             követelményeit, use case-eket és a modulok
