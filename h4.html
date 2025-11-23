@@ -302,7 +302,122 @@
                     <p>A Category osztály műveletei közé tartozik új étel hozzáadása vagy eltávolítása a kategóriából, amelyeket az adminisztrátor indít el. Az addMenuItem() művelet például lehetővé teszi új étlap-tételek gyors felvételét, míg a removeMenuItem() egy adott étel kategóriából való törlését végzi. Ezek az operációk biztosítják, hogy az étlap mindig naprakész és áttekinthető maradjon.</p>
                     <p>A rendszer egészének szempontjából a Category osztály stabil, jól körülhatárolható szerkezeti elemet ad az étlap felépítéséhez, támogatva a gyors navigációt, az adminisztrátorok hatékony munkáját és a vendégek zavartalan rendelési élményét. A kategóriák egyértelmű struktúrája lehetővé teszi a Papillon számára, hogy modern, digitális és felhasználóbarát vendéglátási élményt nyújtson mind helyszínen, mind mobilfelületen, miközben megfelel az üzleti, jogi és felhasználói elvárásoknak. </p>
                 <h1 id="3">Custumer osztály részletes leírása </h1>
-                    <p>...</p>
+                    <p>A rendszerben a Customer egy olyan osztály, amely bármilyen típusú vevőt reprezentál, és olyan adatokkal rendelkezik, mint a név, az e-mail cím és a telefonszám.</p>
+                    <p>A Customer több címmel (Address), több fizetési móddal (PaymentMethod) és több leadott rendelésével (Order) is rendelkezhet, továbbá egy vagy több szerepet (CustomerRole) is betölthet a rendszerben, valamint opcionálisan hűségfiókkal (LoyaltyAccount) is bírhat. A Customer osztálynak több specializációja létezik: a GuestCustomer a regisztráció nélküli vásárlót írja le, aki csak a rendeléshez szükséges minimális adatokat adja meg; a RegisteredCustomer olyan felhasználó, aki regisztrált fiókkal és belépési adatokkal rendelkezik.</p>
+                    <p>Az Address a vevőhöz rendelhető különböző szállítási címeket, a PaymentMethod a vevő fizetési azonosítóit, az Order a vevő által leadott megrendeléseket, a LoyaltyAccount pedig a hűségpontok és tagsági szintek kezelését biztosítja.</p>
+                    <h3>Osztályok:</h3>
+                        <h4><ins>Customer</ins></h4>
+                        <p><b>Feladata: </b>A Customer az alkalmazás bármely vevőjét fogalmilag leíró osztály.</p>
+                        <p><b>Együtműködő osztályok:</b>Address, PaymentMethod, Order, CustomerRole, LoyaltyAccount</p>
+                        <p><b>Attribútumok:</b></p>
+                        <table>
+                            <tr>
+                                <td><b>Név</b></td>
+                                <td><b>Tipus</b></td>
+                                <td><b>Leírás</b></td>
+                            </tr>
+                            <tr>
+                                <td>name</td>
+                                <td>szöveg</td>
+                                <td>A vevő neve</td>
+                            </tr>
+                            <tr>
+                                <td>email</td>
+                                <td>szöveg</td>
+                                <td>A vevő e-mail címe</td>
+                            </tr>
+                            <tr>
+                                <td>phoneNumber</td>
+                                <td>szöveg</td>
+                                <td>Telefonszám elérhetőség</td>
+                            </tr>
+                        </table>
+                        <hr>
+                        <h4><ins>Address</ins></h4>
+                        <p><b>Feladata: </b>A vevőhöz tartozó szállítási vagy számlázási cím adatait írja le.</p>
+                        <p><b>Együtműködő osztályok:</b>Customer</p>
+                        <p><b>Attribútumok:</b></p>
+                        <table>
+                            <tr>
+                                <td><b>Név</b></td>
+                                <td><b>Tipus</b></td>
+                                <td><b>Leírás</b></td>
+                            </tr>
+                            <tr>
+                                <td>street</td>
+                                <td>szöveg</td>
+                                <td>Utca és házszám</td>
+                            </tr>
+                            <tr>
+                                <td>city</td>
+                                <td>szöveg</td>
+                                <td>Város</td>
+                            </tr>
+                            <tr>
+                                <td>postalCode</td>
+                                <td>szöveg</td>
+                                <td>Irányítószám</td>
+                            </tr>
+                             <tr>
+                                <td>type</td>
+                                <td>szöveg</td>
+                                <td>Cím típusa (otthoni, munkahelyi stb.)</td>
+                            </tr>
+                        </table>
+                        <hr>
+                        <h4><ins>Order</ins></h4>
+                        <p><b>Feladata: </b>A vevő által leadott rendelés fogalmi leírása, annak összege, státusza és tartalma.</p>
+                        <p><b>Együtműködő osztályok:</b>Customer</p>
+                        <p><b>Attribútumok:</b></p>
+                        <table>
+                            <tr>
+                                <td><b>Név</b></td>
+                                <td><b>Tipus</b></td>
+                                <td><b>Leírás</b></td>
+                            </tr>
+                            <tr>
+                                <td>orderNumber</td>
+                                <td>szám</td>
+                                <td>A rendelés azonosítója</td>
+                            </tr>
+                            <tr>
+                                <td>date</td>
+                                <td>dátum</td>
+                                <td>A rendelés dátuma</td>
+                            </tr>
+                            <tr>
+                                <td>totalAmount</td>
+                                <td>szám</td>
+                                <td>A rendelés végösszege</td>
+                            </tr>
+                             <tr>
+                                <td>status</td>
+                                <td>szöveg</td>
+                                <td>A rendelés aktuális állapota</td>
+                            </tr>
+                        </table>
+                        <hr>
+                        <h4><ins>PaymentMethod</ins></h4>
+                        <p><b>Feladata: </b>A vevő különböző fizetési azonosítóit és módjait tárolja (pl. bankkártya token).</p>
+                        <p><b>Együtműködő osztályok:</b>Customer</p>
+                        <p><b>Attribútumok:</b></p>
+                        <table>
+                            <tr>
+                                <td><b>Név</b></td>
+                                <td><b>Tipus</b></td>
+                                <td><b>Leírás</b></td>
+                            </tr>
+                            <tr>
+                                <td>type</td>
+                                <td>szöveg</td>
+                                <td>A fizetési mód típusa</td>
+                            </tr>
+                            <tr>
+                                <td>token</td>
+                                <td>szöveg</td>
+                                <td>A fizetési szolgáltató azonosítója</td>
+                            </tr>
+                        </table>
                 <h1 id="4">Staff és szerepkörei alrendszer – Részletes jellemzés </h1>
                     <p>A Staff alrendszer az éttermi rendszer működésének egyik alapvető pillére, hiszen ide tartoznak mindazon dolgozók, akik a rendeléseket kezelik, a vendégekkel kapcsolatba lépnek, valamint biztosítják, hogy a Papillon rendszer napi működése folyamatos és gördülékeny legyen. A Staff egy gyűjtőosztály, amely általános tulajdonságokat és viselkedéseket tartalmaz, amelyekből a konkrét szerepkörök – Waiter (pincér), Receptionist (pultos) és Admin – öröklik a saját speciális feladataikat. </p>
                     <p>Az alrendszer fő célja, hogy egységes szerkezetet biztosítson a dolgozók kezeléséhez, miközben elkülöníti a különféle jogosultságokat és munkafolyamatokat. Így minden szereplő csak azokhoz a funkciókhoz fér hozzá, amelyek a saját feladatköréhez szükségesek, ami növeli a biztonságot és javítja a használhatóságot. </p>
